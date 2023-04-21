@@ -1,0 +1,208 @@
+print("Tower of Jump Script Executed")
+
+local ScreenGui = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local title = Instance.new("TextLabel")
+local CompleteObbyB = Instance.new("TextButton")
+local FinalLevelB = Instance.new("TextButton")
+local RemoveLasersB = Instance.new("TextButton")
+local InfiniteJumpB = Instance.new("TextButton")
+local TextLabel = Instance.new("TextLabel")
+local TextLabel_2 = Instance.new("TextLabel")
+local TpToPlayerTextBox = Instance.new("TextBox")
+local TextLabel_3 = Instance.new("TextLabel")
+local TpToPlayerEnterB = Instance.new("TextButton")
+local TextLabel_4 = Instance.new("TextLabel")
+local TextLabel_5 = Instance.new("TextLabel")
+local wSpeedTextBox = Instance.new("TextBox")
+local jHeightTextBox = Instance.new("TextBox")
+local wSpeedEnterB = Instance.new("TextButton")
+local jHeightEnterB = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+
+main.Name = "main"
+main.Parent = ScreenGui
+main.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+main.Position = UDim2.new(0.240473688, 0, 0.24581939, 0)
+main.Size = UDim2.new(0, 472, 0, 303)
+main.Active = true
+main.Draggable = true
+
+title.Name = "title"
+title.Parent = main
+title.BackgroundColor3 = Color3.fromRGB(255, 165, 0)
+title.Size = UDim2.new(0, 472, 0, 50)
+title.Font = Enum.Font.GothamBold
+title.Text = "The Tower of Jump script by Edogawa"
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.TextSize = 18.000
+title.TextWrapped = true
+
+CompleteObbyB.Name = "CompleteObbyB"
+CompleteObbyB.Parent = main
+CompleteObbyB.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CompleteObbyB.Position = UDim2.new(0.0271398742, 0, 0.343859643, 0)
+CompleteObbyB.Size = UDim2.new(0, 192, 0, 34)
+CompleteObbyB.Font = Enum.Font.Gotham
+CompleteObbyB.Text = "Complete tower"
+CompleteObbyB.TextColor3 = Color3.fromRGB(255, 255, 255)
+CompleteObbyB.TextSize = 14.000
+CompleteObbyB.MouseButton1Down:connect(function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(30.31, 219.23, 141.97)
+end)
+
+InfiniteJumpB.Name = "InfiniteJumpB"
+InfiniteJumpB.Parent = main
+InfiniteJumpB.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+InfiniteJumpB.ClipsDescendants = true
+InfiniteJumpB.Position = UDim2.new(0.515175164, 0, 0.343859643, 0)
+InfiniteJumpB.Size = UDim2.new(0, 192, 0, 34)
+InfiniteJumpB.Font = Enum.Font.Gotham
+InfiniteJumpB.Text = "Infinite Jump"
+InfiniteJumpB.TextColor3 = Color3.fromRGB(255, 255, 255)
+InfiniteJumpB.TextSize = 14.000
+InfiniteJumpB.MouseButton1Down:connect(function()
+local Player = game:GetService'Players'.LocalPlayer;
+local UIS = game:GetService'UserInputService';
+
+_G.JumpHeight = 50;
+
+function Action(Object, Function) if Object ~= nil then Function(Object); end end
+
+UIS.InputBegan:connect(function(UserInput)
+    if UserInput.UserInputType == Enum.UserInputType.Keyboard and UserInput.KeyCode == Enum.KeyCode.Space then
+        Action(Player.Character.Humanoid, function(self)
+            if self:GetState() == Enum.HumanoidStateType.Jumping or self:GetState() == Enum.HumanoidStateType.Freefall then
+                Action(self.Parent.HumanoidRootPart, function(self)
+                    self.Velocity = Vector3.new(0, _G.JumpHeight, 0);
+                end)
+            end
+        end)
+    end
+end)
+end)
+
+TextLabel.Parent = main
+TextLabel.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+TextLabel.Position = UDim2.new(0.109519698, 0, 0.200000003, 0)
+TextLabel.Size = UDim2.new(0, 119, 0, 34)
+TextLabel.Font = Enum.Font.Gotham
+TextLabel.Text = "Teleports"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 18.000
+
+TextLabel_2.Parent = main
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+TextLabel_2.Position = UDim2.new(0.596933901, 0, 0.200000003, 0)
+TextLabel_2.Size = UDim2.new(0, 119, 0, 34)
+TextLabel_2.Font = Enum.Font.Gotham
+TextLabel_2.Text = "Miscellaneous"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextSize = 18.000
+
+TpToPlayerTextBox.Name = "TpToPlayerTextBox"
+TpToPlayerTextBox.Parent = main
+TpToPlayerTextBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TpToPlayerTextBox.Position = UDim2.new(0.0248515047, 0, 0.750877202, 0)
+TpToPlayerTextBox.Size = UDim2.new(0, 192, 0, 34)
+TpToPlayerTextBox.Font = Enum.Font.SourceSans
+TpToPlayerTextBox.Text = ""
+TpToPlayerTextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TpToPlayerTextBox.TextSize = 18.000
+
+TextLabel_3.Parent = main
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+TextLabel_3.Position = UDim2.new(0.107231371, 0, 0.635643542, 0)
+TextLabel_3.Size = UDim2.new(0, 119, 0, 34)
+TextLabel_3.Font = Enum.Font.Gotham
+TextLabel_3.Text = "To player (enter name)"
+TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.TextSize = 18.000
+
+TpToPlayerEnterB.Name = "TpToPlayerEnterB"
+TpToPlayerEnterB.Parent = main
+TpToPlayerEnterB.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TpToPlayerEnterB.ClipsDescendants = true
+TpToPlayerEnterB.Position = UDim2.new(0.139889091, 0, 0.888101399, 0)
+TpToPlayerEnterB.Size = UDim2.new(0, 92, 0, 25)
+TpToPlayerEnterB.Font = Enum.Font.Gotham
+TpToPlayerEnterB.Text = "Teleport"
+TpToPlayerEnterB.TextColor3 = Color3.fromRGB(255, 255, 255)
+TpToPlayerEnterB.TextSize = 14.000
+TpToPlayerEnterB.MouseButton1Down:connect(function()
+local playername = TpToPlayerTextBox.Text
+
+local plr1 = game.Players.LocalPlayer.Character
+local plr2 = game.Workspace:FindFirstChild(playername)
+plr1.HumanoidRootPart.CFrame = plr2.HumanoidRootPart.CFrame
+end)
+
+TextLabel_4.Parent = main
+TextLabel_4.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+TextLabel_4.Position = UDim2.new(0.48132959, 0, 0.652145147, 0)
+TextLabel_4.Size = UDim2.new(0, 110, 0, 34)
+TextLabel_4.Font = Enum.Font.Gotham
+TextLabel_4.Text = "Walk speed:"
+TextLabel_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_4.TextSize = 13.000
+
+TextLabel_5.Parent = main
+TextLabel_5.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+TextLabel_5.Position = UDim2.new(0.493871808, 0, 0.807260633, 0)
+TextLabel_5.Size = UDim2.new(0, 104, 0, 34)
+TextLabel_5.Font = Enum.Font.Gotham
+TextLabel_5.Text = "Jump height:"
+TextLabel_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_5.TextSize = 13.000
+
+wSpeedTextBox.Name = "wSpeedTextBox"
+wSpeedTextBox.Parent = main
+wSpeedTextBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+wSpeedTextBox.Position = UDim2.new(0.712368429, 0, 0.658468008, 0)
+wSpeedTextBox.Size = UDim2.new(0, 51, 0, 29)
+wSpeedTextBox.Font = Enum.Font.SourceSans
+wSpeedTextBox.Text = "10"
+wSpeedTextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+wSpeedTextBox.TextSize = 18.000
+
+jHeightTextBox.Name = "jHeightTextBox"
+jHeightTextBox.Parent = main
+jHeightTextBox.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+jHeightTextBox.Position = UDim2.new(0.712368429, 0, 0.822094798, 0)
+jHeightTextBox.Size = UDim2.new(0, 51, 0, 29)
+jHeightTextBox.Font = Enum.Font.SourceSans
+jHeightTextBox.ShowNativeInput = false
+jHeightTextBox.Text = ""
+jHeightTextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+jHeightTextBox.TextSize = 18.000
+
+wSpeedEnterB.Name = "wSpeedEnterB"
+wSpeedEnterB.Parent = main
+wSpeedEnterB.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+wSpeedEnterB.ClipsDescendants = true
+wSpeedEnterB.Position = UDim2.new(0.847029746, 0, 0.663679004, 0)
+wSpeedEnterB.Size = UDim2.new(0, 46, 0, 24)
+wSpeedEnterB.Font = Enum.Font.Gotham
+wSpeedEnterB.Text = "Enter"
+wSpeedEnterB.TextColor3 = Color3.fromRGB(255, 255, 255)
+wSpeedEnterB.TextSize = 14.000
+wSpeedEnterB.MouseButton1Down:connect(function()
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = wSpeedTextBox.Text
+end)
+
+jHeightEnterB.Name = "jHeightEnterB"
+jHeightEnterB.Parent = main
+jHeightEnterB.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+jHeightEnterB.ClipsDescendants = true
+jHeightEnterB.Position = UDim2.new(0.847029746, 0, 0.828695536, 0)
+jHeightEnterB.Size = UDim2.new(0, 46, 0, 24)
+jHeightEnterB.Font = Enum.Font.Gotham
+jHeightEnterB.Text = "Enter"
+jHeightEnterB.TextColor3 = Color3.fromRGB(255, 255, 255)
+jHeightEnterB.TextSize = 14.000
+jHeightEnterB.MouseButton1Down:connect(function()
+game:service('Players').LocalPlayer.Character.Humanoid.JumpPower = jHeightTextBox.Text
+end)
