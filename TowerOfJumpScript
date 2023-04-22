@@ -4,8 +4,7 @@ local ScreenGui = Instance.new("ScreenGui")
 local main = Instance.new("Frame")
 local title = Instance.new("TextLabel")
 local CompleteObbyB = Instance.new("TextButton")
-local FinalLevelB = Instance.new("TextButton")
-local RemoveLasersB = Instance.new("TextButton")
+local ReachWinnerRoomB = Instance.new("TextButton")
 local InfiniteJumpB = Instance.new("TextButton")
 local TextLabel = Instance.new("TextLabel")
 local TextLabel_2 = Instance.new("TextLabel")
@@ -52,6 +51,19 @@ CompleteObbyB.TextColor3 = Color3.fromRGB(255, 255, 255)
 CompleteObbyB.TextSize = 14.000
 CompleteObbyB.MouseButton1Down:connect(function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(30.31, 219.23, 141.97)
+end)
+
+ReachWinnerRoomB.Name = "ReachWinnerRoomB"
+ReachWinnerRoomB.Parent = main
+ReachWinnerRoomB.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ReachWinnerRoomB.Position = UDim2.new(0.0271398742, 0, 0.487719286, 0)
+ReachWinnerRoomB.Size = UDim2.new(0, 192, 0, 34)
+ReachWinnerRoomB.Font = Enum.Font.Gotham
+ReachWinnerRoomB.Text = "Reach Winner Room"
+ReachWinnerRoomB.TextColor3 = Color3.fromRGB(255, 255, 255)
+ReachWinnerRoomB.TextSize = 14.000
+ReachWinnerRoomB.MouseButton1Down:connect(function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-38445.5, 387.47, 0.82)
 end)
 
 InfiniteJumpB.Name = "InfiniteJumpB"
@@ -186,7 +198,7 @@ wSpeedEnterB.ClipsDescendants = true
 wSpeedEnterB.Position = UDim2.new(0.847029746, 0, 0.663679004, 0)
 wSpeedEnterB.Size = UDim2.new(0, 46, 0, 24)
 wSpeedEnterB.Font = Enum.Font.Gotham
-wSpeedEnterB.Text = "Enter"
+wSpeedEnterB.Text = "Set"
 wSpeedEnterB.TextColor3 = Color3.fromRGB(255, 255, 255)
 wSpeedEnterB.TextSize = 14.000
 wSpeedEnterB.MouseButton1Down:connect(function()
@@ -200,7 +212,7 @@ jHeightEnterB.ClipsDescendants = true
 jHeightEnterB.Position = UDim2.new(0.847029746, 0, 0.828695536, 0)
 jHeightEnterB.Size = UDim2.new(0, 46, 0, 24)
 jHeightEnterB.Font = Enum.Font.Gotham
-jHeightEnterB.Text = "Enter"
+jHeightEnterB.Text = "Set"
 jHeightEnterB.TextColor3 = Color3.fromRGB(255, 255, 255)
 jHeightEnterB.TextSize = 14.000
 jHeightEnterB.MouseButton1Down:connect(function()
