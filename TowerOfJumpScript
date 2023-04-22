@@ -3,7 +3,7 @@ print("Tower of Jump Script Executed")
 local ScreenGui = Instance.new("ScreenGui")
 local main = Instance.new("Frame")
 local title = Instance.new("TextLabel")
-local CompleteObbyB = Instance.new("TextButton")
+local CompleteTowerB = Instance.new("TextButton")
 local ReachWinnerRoomB = Instance.new("TextButton")
 local InfiniteJumpB = Instance.new("TextButton")
 local TextLabel = Instance.new("TextLabel")
@@ -35,21 +35,21 @@ title.Parent = main
 title.BackgroundColor3 = Color3.fromRGB(255, 165, 0)
 title.Size = UDim2.new(0, 472, 0, 50)
 title.Font = Enum.Font.GothamBold
-title.Text = "The Tower of Jump script by Edogawa"
+title.Text = "The Tower of Jump script by IAmTRealConan"
 title.TextColor3 = Color3.fromRGB(255, 255, 255)
 title.TextSize = 18.000
 title.TextWrapped = true
 
-CompleteObbyB.Name = "CompleteObbyB"
-CompleteObbyB.Parent = main
-CompleteObbyB.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-CompleteObbyB.Position = UDim2.new(0.0271398742, 0, 0.343859643, 0)
-CompleteObbyB.Size = UDim2.new(0, 192, 0, 34)
-CompleteObbyB.Font = Enum.Font.Gotham
-CompleteObbyB.Text = "Complete tower"
-CompleteObbyB.TextColor3 = Color3.fromRGB(255, 255, 255)
-CompleteObbyB.TextSize = 14.000
-CompleteObbyB.MouseButton1Down:connect(function()
+CompleteTowerB.Name = "CompleteTowerB"
+CompleteTowerB.Parent = main
+CompleteTowerB.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CompleteTowerB.Position = UDim2.new(0.0271398742, 0, 0.343859643, 0)
+CompleteTowerB.Size = UDim2.new(0, 192, 0, 34)
+CompleteTowerB.Font = Enum.Font.Gotham
+CompleteTowerB.Text = "Complete tower"
+CompleteTowerB.TextColor3 = Color3.fromRGB(255, 255, 255)
+CompleteTowerB.TextSize = 14.000
+CompleteTowerB.MouseButton1Down:connect(function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(30.31, 219.23, 141.97)
 end)
 
